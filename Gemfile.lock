@@ -1,0 +1,30 @@
+PATH
+  remote: .
+  specs:
+    xrb (0.0.3)
+      pry (= 0.11.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.2)
+    method_source (0.9.0)
+    minitest (5.11.3)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    rake (12.3.0)
+    rake-compiler (1.0.4)
+      rake
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest
+  rake
+  rake-compiler
+  xrb!
+
+BUNDLED WITH
+   1.16.0

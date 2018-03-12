@@ -1,0 +1,36 @@
+Event                     XCB_GE_GENERIC
+
+// Nullary
+NoEvent                   XCB_NONE
+
+// Keyboard
+Key{Down,Up}              XCB_KEY_{PRESS,RELEASE}
+KeymapChange              XCB_KEYMAP_NOTIFY
+
+// Mouse
+Mouse{Down,Up}            XCB_BUTTON_{PRESS,RELEASE}
+Mouse{In,Out,Move}        XCB_{ENTER,LEAVE,MOTION}_NOTIFY
+
+// Clipboard
+Clipboard{Clear,Request,} XCB_SELECTION_{CLEAR,REQUEST,NOTIFY}
+
+// Focus
+Focus{In,Out}             XCB_FOCUS_{IN,OUT}
+
+// Drawable
+Drawable{Expose,Unexpose} XCB_{EXPOSE,{NO,GRAPHICS}_EXPOSURE}}
+
+// Window
+{Create,Destroy}          XCB_{CREATE,DESTROY}_NOTIFY
+{Unmap,Map,Request}       XCB_{UNMAP,MAP,MAP_REQUEST}_NOTIFY
+ColormapChange            XCB_COLORMAP_NOTIFY
+Visible                   XCB_VISIBILITY_NOTIFY
+
+// Etc
+Configure{,Request}       XCB_CONFIGURE_{NOTIFY,REQUEST}
+{Gravity,ResizeRequest}   XCB_{GRAVITY,RESIZE_REQUEST}_NOTIFY
+Circulate{,Request}       XCB_CIRCULATE_{NOTIFY,REQUEST}
+Property                  XCB_PROPERTY_NOTIFY
+Reparent                  XCB_REPARENT_NOTIFY
+ClientMessage             XCB_CLIENT_MESSAGE
+Mapping                   XCB_MAPPING_NOTIFY
