@@ -66,6 +66,9 @@ void init_other_events() {
 	cXrbPropertyEvent         = rb_define_class_under(mXrb, "PropertyEvent",         cXrbEvent);
 	cXrbReparentEvent         = rb_define_class_under(mXrb, "ReparentEvent",         cXrbEvent);
 	cXrbClientMessageEvent    = rb_define_class_under(mXrb, "ClientMessageEvent",    cXrbEvent);
-	cXrbMappingEvent          = rb_define_class_under(mXrb, "MappingEvent",          cXrbEvent);
-	cXrbColormapEvent         = rb_define_class_under(mXrb, "ColormapEvent",         cXrbEvent);
+
+	cXrbMappingEvent = rb_define_class_under(mXrb, "MappingEvent", cXrbEvent);
+	//rb_define_alloc_func(cXrbMappingEvent, xrb_mapping_event_alloc);
+
+	cXrbColormapEvent = rb_define_class_under(mXrb, "ColormapEvent", cXrbEvent);
 }

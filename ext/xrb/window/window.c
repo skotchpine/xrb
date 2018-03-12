@@ -191,8 +191,8 @@ static VALUE xrb_window_move(VALUE i, VALUE x, VALUE y) {
 
 	m = XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y;
 
-	v[0] = FIX2INT(rb_iv_get(i, "@x")) + FIX2INT(x);
-	v[1] = FIX2INT(rb_iv_get(i, "@y")) + FIX2INT(y);
+	v[0] = FIX2INT(x);
+	v[1] = FIX2INT(y);
 
 	xcb_configure_window(xrb_inst_cxn(i), xrb_window_xid(i), m, v);
 	xcb_aux_sync(xrb_inst_cxn(i));
@@ -209,8 +209,8 @@ static VALUE xrb_window_resize(VALUE i, VALUE width, VALUE height) {
 
 	m = XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT;
 
-	v[0] = FIX2INT(rb_iv_get(i, "@width"))  + FIX2INT(width);
-	v[1] = FIX2INT(rb_iv_get(i, "@height")) + FIX2INT(height);
+	v[0] = FIX2INT(width);
+	v[1] = FIX2INT(height);
 
 	xcb_configure_window(xrb_inst_cxn(i), xrb_window_xid(i), m, v);
 	xcb_aux_sync(xrb_inst_cxn(i));
@@ -233,11 +233,10 @@ static VALUE xrb_window_teleport(VALUE i, VALUE x, VALUE y,
 	  | XCB_CONFIG_WINDOW_WIDTH
 	  | XCB_CONFIG_WINDOW_HEIGHT;
 
-	v[0] = FIX2INT(rb_iv_get(i, "@x"))      + FIX2INT(x);
-	v[1] = FIX2INT(rb_iv_get(i, "@y"))      + FIX2INT(y);
-	v[2] = FIX2INT(rb_iv_get(i, "@width"))  + FIX2INT(width);
-	v[3] = FIX2INT(rb_iv_get(i, "@height")) + FIX2INT(height);
-
+	v[0] = FIX2INT(x);
+	v[1] = FIX2INT(y);
+	v[2] = FIX2INT(width);
+	v[3] = FIX2INT(height);
 
 	xcb_configure_window(xrb_inst_cxn(i), xrb_window_xid(i), m, v);
 	xcb_aux_sync(xrb_inst_cxn(i));
